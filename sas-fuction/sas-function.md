@@ -1,12 +1,19 @@
-SAS Function
+## SAS Function
 
-### fuction : find
+### find
 ```
-find(TEAM,'Seqt')
+find(TEAM,'Seat')
 find(lower(TEAM),'seat')
 ```
 
-### fuction : count
+### count
 ```
-count(TEAM,'Se')  
+count(TEAM,'s')  
 ```
+
+### index
+```
+index('ABC.DEF(X=Y)','X=Y'')
+```
+
+
