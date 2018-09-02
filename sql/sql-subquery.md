@@ -2,6 +2,8 @@
 
 #### where with subquery
 ```
+select *
+from    TABLE
 where value gt (select mean(value) from table)
 ```
 
