@@ -1,5 +1,12 @@
 ## SAS Function
 
+### put and input
+```
+numdate=122591;
+chardate=put(numdate,z6.);
+sasdate=input(chardate,mmddyy6.);
+```
+
 ### find
 ```
 find(TEAM,'Seat')
