@@ -50,6 +50,24 @@ index('ABC.DEF(X=Y)','X=Y'')
 tranwrd('Mrs.  Joan Smith', "Mrs.", "Ms.")
 ```
 
+### scan
+- returns the nth word from a character string
+```
+data firstlast;
+   input String $60.;
+   First_Word=scan(string, 1);
+   Last_Word=scan(string, -1);
+   datalines4;
+Jack and Jill
+& Bob & Carol & Ted & Alice &
+Leonardo
+! $ % & ( ) * + , - . / ;
+;;;;
+proc print data=firstlast;
+run;
+```
+
+
 ### SAS Function List
 - http://support.sas.com/documentation/cdl//en/lefunctionsref/69762/HTML/default/viewer.htm#n1mj2bizbsd7ktn1sf9lz111kku3.htm
 
