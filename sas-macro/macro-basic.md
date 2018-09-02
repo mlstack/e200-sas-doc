@@ -25,14 +25,17 @@ title "Display of Data Set &dsn";
 ```
 
 ### %str
+- macro variable including special character
 ```
 %let state=%str( North Carolina);
 %let town=%str(Taylor%'s Pond);
 %let store=%nrstr(Smith&Jones);
 %let plotit=%str(
-  proc plot;
-  plot income*age;
+  proc gplot data = SASHELP.CLASS ;
+  plot WEIGHT * HEIGHT ;
   run;);
+%put &plotit ;
+&plotit ;
 ```
 
 ### %macro ~ %mend 
