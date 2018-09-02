@@ -1,9 +1,11 @@
 ## SAS Function
 
 ### put
-- returns a value using a specified format.
+- returns a value using a specified format
+- converting Numeric Values to Character Value
 ### input
-- returns the value that is produced when SAS converts an expression using the specified informat.
+- returns the value that is produced when SAS converts an expression using the specified informat
+- converting Character Values to Numeric Values
 ```
 numdate=122591;
 chardate=put(numdate,z6.);
@@ -17,6 +19,11 @@ data testin;
 2,115,353
 ;
 run ;
+```
+### left
+- Left-aligns a character string
+```
+left(' DUE DATE')
 ```
 
 ### find
