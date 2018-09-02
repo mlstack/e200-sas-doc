@@ -1,6 +1,6 @@
 ### [Title] SAS SQL
 ### [Ahtor] Yibeck Lee(Yibeck.Lee@gmail.com)
-
+<hr>
 ### coalesce fuction
 ```
 /* Example : COALESCE */
