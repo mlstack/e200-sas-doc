@@ -5,6 +5,7 @@
 title "Display of Data Set &dsn";
 ```
 ### %put 
+- display macro variable in log window
 ```
 %let street=Maple;
 %put &street ;
