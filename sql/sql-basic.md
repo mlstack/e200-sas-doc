@@ -2,9 +2,7 @@
 ### [Ahtor] Yibeck Lee(Yibeck.Lee@gmail.com)
 <hr>
 
-
-
-### Example : GROUP BY, SUM, MEAN, MIN, MAX
+### GROUP BY, SUM, MEAN, MIN, MAX
 ```
 data CstSum ;
 	input CstNo YM TrxAmt ;
@@ -28,7 +26,7 @@ proc print ; run ;
 ```
 
 
-### Example : Full Outer Join
+### Full Outer Join
 ```
 data a ;
     input cstno ym200601 ;
@@ -51,7 +49,7 @@ proc sql ;
 quit ;
 ```
 
-### Example : Inner Join
+### Inner Join
 ```
 data a ;
     input cstno ym200601 ;
@@ -74,7 +72,7 @@ proc sql ;
 quit ; 
 ```
 
-### Example : Left Outer Join
+### Left Outer Join
 ```
 data a ;
     input cstno ym200601 ;
@@ -96,7 +94,34 @@ proc sql ;
 quit ; 
 ```
 
-### Example : coalesce fuction
+
+### cross join / union
+```
+data one;
+ input X Y $;
+ datalines;
+1 2
+2 3
+;
+data two;
+ input W Z $;
+ datalines;
+2 5
+3 6
+4 9
+;
+run;
+proc sql ;
+select *
+from one cross join two;
+quit ;
+proc sql ;
+select *
+from one union join two;
+quit ;
+```
+
+### coalesce fuction
 ```
 data a ;
     input cstno ym200601 ;
@@ -122,7 +147,7 @@ quit ;
 ```
 
 
-### Example : INSERT
+### INSERT
 ```
 data cstymsum ;
     input crdno yymm amt ;
