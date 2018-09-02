@@ -28,6 +28,30 @@ proc sql ;
 quit ;
 ```
 
+### Example : GROUP BY, SUM, MEAN, MIN, MAX
+```
+data CstSum ;
+	input CstNo YM TrxAmt ;
+cards ;
+1 20060101 10000 
+1 20060120 20000
+2 20060113 20000
+2 20060125 30000
+run ;
+proc sql ;
+	create table Sum as
+	select 	CstNo
+	          ,	sum(TrxAmt) as TrxSum
+	          ,	mean(TrxAmt) as TrxMean
+	          ,	min(TrxAmt) as TrxMin
+			  ,	max(TrxAmt) as TrxMax
+	from		CstSum
+	group by CstNo ;
+quit ;
+proc print ; run ;
+```
+
+
 ### Example : Full Outer Join
 ```
 data a ;
