@@ -585,8 +585,12 @@ count(TEAM,'s')
 ```
 
 ### index
+- searches a character expression for a string of characters, and returns the position of the string's first character for the first occurrence of the string
 ```
 index('ABC.DEF(X=Y)','X=Y'')
 ```
-
-
+### tranwrd
+- replaces all occurrences of a substring in a character string
+```
+tranwrd('Mrs.  Joan Smith', "Mrs.", "Ms.")
+```
