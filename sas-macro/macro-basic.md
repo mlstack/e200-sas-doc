@@ -1,3 +1,29 @@
+### %let
+- assign macro variable
+```
+%let dsn=Newdata;
+title "Display of Data Set &dsn";
+```
+### %put 
+```
+%let street=Maple;
+%put &street ;
+%let num=123;
+%let address=&num &street Avenue;
+%put &address ;
+```
+
+### %eval 
+- Arithmetic expressions
+```
+%let num=%eval(100+200); / * produces 300 * /
+```
+### %syseval
+- Arithmetic expressions
+```
+%let num=%sysevalf(100+1.597); / * produces 101.597 * /
+```
+
 ### %str
 ```
 %let state=%str( North Carolina);
