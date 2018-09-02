@@ -168,3 +168,30 @@ proc sql ;
 quit ;
 proc print data =cstymsum ; run ;
 ```
+
+### SQL and Macro
+```
+proc sql ;
+select count(*) into :mCnt from SASHELP.CLASS ;
+select NAME into :mName separated by ", "
+from SASHELP.CLASS
+;
+quit ;
+
+%macro mStep ;
+%do i = 1 %to &mCnt ;
+	%let name = %scan("&mName",&i,", ") ;
+	%put &name ;
+%end ;
+%mend ;
+%mStep ;
+
+
+data _null ;
+do i = 1 to &mCnt ;
+	name = scan("&mName",i,", ") ;
+	strI = put(i, 2.) ;
+	call symput("m_"||left(strI), name) ;
+end ;
+run ;
+```
