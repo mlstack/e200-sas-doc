@@ -74,3 +74,26 @@ proc sql ;
     from        a full outer join b on a.cstno = b.cstno ;
 quit ;
 ```
+
+### Example : Inner Join
+```
+data a ;
+    input cstno ym200601 ;
+   cards ;
+1 1100
+2 2100
+ ;
+data b ;
+    input cstno ym200602 ;
+   cards ;
+2 2200
+3 3200
+ ;
+proc sql ;
+    select      a.cstno
+                  ,ym200601
+                  ,ym200602
+    from        a, b
+    where     a.cstno = b.cstno ;
+quit ; 
+```
