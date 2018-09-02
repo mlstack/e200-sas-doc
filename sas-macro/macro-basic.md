@@ -89,3 +89,42 @@ options mlogic mprint ;
 %mend whatstep;
 %whatstep(info=print,mydata=SASHELP.CLASS) ;
 ```
+
+## macro fuction
+
+### %scan
+- search for a word specified by its number
+```
+%let address=123 maple avenue;
+%let frstword=%scan(&address,1);
+```
+
+### %substr
+- produce a substring of a character string
+```
+%put &sysday ;
+%let day = %substr(&sysday,1,3);
+%put day = &day ;
+```
+
+### symput in data step
+- datastep value into macro variable
+```
+%macro env1 ;
+ data _null_;
+ x = 'a token' ;
+ call symput("myvar1",x);
+ run;
+%mend env1;
+%env1 ;
+%put "&myvar1" ;
+data temp;
+ y = "&myvar1";
+run;
+```
+
+### %sysget
+- returns the value of a specified host environment variable
+
+
+
