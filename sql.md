@@ -3,7 +3,6 @@
 <hr>
 
 
-```
 
 ### Example : GROUP BY, SUM, MEAN, MIN, MAX
 ```
