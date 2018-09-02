@@ -68,3 +68,24 @@ options mlogic mprint ;
 
 %first(1+2) ;
 ```
+### %if %else
+```
+%macro whatstep(info=,mydata=);
+ %if &info=print %then
+ %do;
+ proc print data=&mydata;
+ run;
+ %end;
+ %else %if &info=report %then
+ %do;
+ options nodate nonumber ps=18 ls=70 fmtsearch=(Sasuser);
+ proc report data=&mydata nowd;
+ column manager dept sales;
+ where sector='se';
+ format manager $mgrfmt. dept $deptfmt. sales dollar11.2;
+ title 'Sales for the Southeast Sector';
+ run;
+ %end;
+%mend whatstep;
+%whatstep(info=print,mydata=SASHELP.CLASS) ;
+```
