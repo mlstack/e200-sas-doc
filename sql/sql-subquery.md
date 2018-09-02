@@ -7,7 +7,7 @@ from    TABLE
 where value gt (select mean(value) from table)
 ```
 
-### table with subquery
+#### table with subquery
 ```
 select 
     T1.A
