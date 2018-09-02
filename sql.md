@@ -120,3 +120,26 @@ proc sql ;
     from        a full outer join b on a.cstno = b.cstno ;
 quit ;
 ```
+
+
+### Example : INSERT
+```
+data cstymsum ;
+    input crdno yymm amt ;
+    cards ;
+1 200601 1100
+2 200601 2100
+ ;
+data cstsum200602 ;
+    input crdno yymm amt ;
+    cards ;
+1 200602 1200
+2 200602 2200
+3 200602 3200
+ ;
+proc sql ;
+    insert into cstymsum
+    select * from cstsum200602 ;
+quit ;
+proc print data =cstymsum ; run ;
+```
