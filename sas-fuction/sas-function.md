@@ -1,10 +1,20 @@
 ## SAS Function
 
-### put and input
+### put : returns a value using a specified format.
+### input : returns the value that is produced when SAS converts an expression using the specified informat.
 ```
 numdate=122591;
 chardate=put(numdate,z6.);
 sasdate=input(chardate,mmddyy6.);
+```
+```
+data testin;
+   input sale $9.;
+   fmtsale=input(sale,comma9.);
+   datalines;
+2,115,353
+;
+run ;
 ```
 ### putc : to specify a character format at run time
 ```
