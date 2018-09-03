@@ -20,6 +20,18 @@ data testin;
 ;
 run ;
 ```
+
+```
+data derived ;
+	set raw ;
+	BirthYear=year(input(put(BirthDay,z8.),yymmdd8.)) ;
+	age = year(today()) - BirthYear ;
+	area = substr(addr,1, index(addr,' ')) ;
+run ;
+
+proc print ; run ;
+```
+
 ### left
 - Left-aligns a character string
 ```
